@@ -36,6 +36,11 @@ const Pagination: FC<PaginationControlsProps> = ({
 	const handlePerPageChange = (change: number) => {
 		setShowDropdown(!showDropdown);
 		if (change === per_page) return;
+		if ((totalPages * per_page) / change < page) {
+			const newPage = Math.floor((totalPages * per_page) / change);
+			router.replace(`/?page=${newPage}&per_page=${change}`);
+			return;
+		}
 		router.replace(`/?page=${page}&per_page=${change}`);
 	};
 
