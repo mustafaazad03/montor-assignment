@@ -18,6 +18,7 @@ const config: Config = {
         "orange-primary": "#f1501f",
         "background-primary": "#e6e6e6",
         "text-primary": "#3a3a3a",
+        "text-secondary": "#767676",
       }
     },
   },
