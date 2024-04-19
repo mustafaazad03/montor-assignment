@@ -10,7 +10,7 @@ export default function Home({
 }) {
   const reports = reportData.reports;
   const page = parseInt(Array.isArray(searchParams['page']) ? '1' : searchParams['page'] || '1', 10); // Parse page as integer, default to 1
-  const per_page = parseInt(Array.isArray(searchParams['per_page']) ? '5' : searchParams['per_page'] || '5', 10); // Parse per_page as integer, default to 5
+  const per_page = parseInt(Array.isArray(searchParams['per_page']) ? '5' : searchParams['per_page'] || '10', 10); // Parse per_page as integer, default to 5
 
   // Calculate start and end indices based on pagination
   const start = (page - 1) * per_page;

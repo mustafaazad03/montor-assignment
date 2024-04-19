@@ -99,9 +99,9 @@ const Pagination: FC<PaginationControlsProps> = ({
         <div className="flex-none p-2">
         <button onClick={() => setShowDropdown(!showDropdown)} className="flex justify-between w-fit gap-2 items-center  p-2 border border-text-secondary/20 rounded-lg text-sm text-text-primary">
           {per_page}
-          <Image src={`/report/${showDropdown ? 'up' : 'down'}-arrow.svg`} width={100} height={100} alt={`${showDropdown ? 'up' : 'down'}-arrow`} className='w-2 h-2' />
+          <Image src={`/report/${showDropdown ? 'up-arrow.svg' : 'down-arrow.svg'}`} width={100} height={100} alt={`${showDropdown ? 'up' : 'down'}-arrow`} className='w-2 h-2' />
         </button>
-        <div className={`${showDropdown ? 'block' : 'hidden'} w-fit m-1 bg-white rounded-lg shadow-xl absolute`}>
+        <div className={`${showDropdown ? 'block' : 'hidden'} w-fit mt-1 bg-white rounded-lg shadow-xl absolute`}>
         {[10, 15, 20].map(perPageOption => (
           <button key={perPageOption} className="block px-4 py-2 text-sm text-text-primary hover:bg-gray-100 cursor-pointer" onClick={() => handlePerPageChange(perPageOption)}>
             {perPageOption}
