@@ -33,7 +33,7 @@ export default function Home({
         </div>
       </div>
       <Table entities={perPageReports} />
-      <Pagination hasNextPage={reports?.length > end} hasPrevPage={start > 0} />
+      <Pagination hasNextPage={reports.length > end} hasPrevPage={start > 0} lastPage={Math.ceil(reports.length / per_page)} />
     </div>
     </div>
   );
