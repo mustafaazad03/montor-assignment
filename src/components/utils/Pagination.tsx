@@ -60,9 +60,15 @@ const Pagination: FC<PaginationControlsProps> = ({
 
 	const renderPageButtons = () => {
 		const buttons = [];
-		const startPage =
-			page % per_page === 0 ? page - 4 : page - (page % per_page) + 1;
-		const endPage = startPage + 4;
+		const maxPagesToShow = 5; // Maximum number of page buttons to show
+
+		let startPage = Math.max(1, page - Math.floor(maxPagesToShow / 2));
+		let endPage = startPage + maxPagesToShow - 1;
+
+		if (endPage > totalPages) {
+			endPage = totalPages;
+			startPage = Math.max(1, endPage - maxPagesToShow + 1);
+		}
 
 		for (let i = startPage; i <= endPage; i++) {
 			buttons.push(
